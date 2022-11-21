@@ -30,12 +30,6 @@ fmt:              ## Format code using black & isort.
 	$(ENV_PREFIX)black -l 79 novelscraper/
 	$(ENV_PREFIX)black -l 79 tests/
 
-.PHONY: lint
-lint:             ## Run pep8, black, mypy linters.
-	$(ENV_PREFIX)flake8 novelscraper/
-	$(ENV_PREFIX)black -l 79 --check novelscraper/
-	$(ENV_PREFIX)black -l 79 --check tests/
-	$(ENV_PREFIX)mypy --ignore-missing-imports novelscraper/
 
 .PHONY: test
 test: lint        ## Run tests and generate coverage report.
